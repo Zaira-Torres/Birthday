@@ -1,0 +1,83 @@
+/* Estilos generales */
+body {
+    background-color: #f8f8f8;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('moñito.png'); /* Imagen de moñitos */
+    background-size: 100px; /* Tamaño de los moños */
+    background-repeat: repeat; /* Repite el patrón */
+    background-position: center;
+}
+
+/* Contenedor */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Tarjeta del formulario y mensaje */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Título */
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* Campos del formulario */
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    margin: 10px 0 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* Botón */
+button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+/* Mensaje de confirmación */
+.mensaje-confirmacion {
+    display: none;
+    text-align: center;
+    padding: 40px;
+}

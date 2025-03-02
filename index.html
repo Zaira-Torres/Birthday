@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de asistencia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="card" id="form-container">
+            <h2>Confirma tu asistencia</h2>
+            <form id="asistencia-form" action="https://formspree.io/f/xeoeygoy" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" required>
+
+                <label for="email">Correo:</label>
+                <input type="email" name="email" id="email" required>
+
+                <label for="asistencia">¿Asistirás?</label>
+                <select name="asistencia" id="asistencia">
+                    <option value="Sí">Sí</option>
+                    <option value="No">No</option>
+                </select>
+
+                <button type="submit">Confirmar</button>
+            </form>
+        </div>
+
+        <!-- Mensaje de confirmación oculto -->
+        <div class="card mensaje-confirmacion" id="mensaje" style="display: none;">
+            <h2>¡Gracias por responder! 🎀</h2>
+            <p>Nos vemos el 22 de marzo.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("asistencia-form").addEventListener("submit", function(event){
+            event.preventDefault(); // Evita el envío inmediato
+            let form = this;
+
+            // Enviar datos a Formspree
+            fetch(form.action, {
+                method: form.method,
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById("form-container").style.display = "none"; // Oculta el formulario
+                    document.getElementById("mensaje").style.display = "block"; // Muestra el mensaje de confirmación
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
